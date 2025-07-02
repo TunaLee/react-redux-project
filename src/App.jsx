@@ -3,8 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import {Provider, useDispatch, useSelector} from 'react-redux'
-import { decrement, increment } from './store/counter/actions'
-import { store } from './store'
+import PlainCard from './components/PlainCard'
+import {Card} from 'antd'
 
 function App() {
   const count = useSelector(state => state.count);
@@ -12,9 +12,11 @@ function App() {
 
   return (
     <>
-      <h1>Redux Count: {count}</h1>
-      <button onClick={()=>dispatch(increment())}>+</button>
-      <button onClick={()=>dispatch(decrement())}>-</button>
+      <PlainCard></PlainCard>
+      <Card title='Antd Card' style={{width: 300}}>
+        <p>Content</p>
+        <p>Content...</p>
+      </Card>
     </>
   )
 }
